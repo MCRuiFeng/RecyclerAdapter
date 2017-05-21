@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="ui">#33BBFF</color>
+	<color name="widget">#FFFFFF</color>
+	<color name="window">#F9F9FB</color>
+	<color name="divider">#DEDFE0</color>
+	<color name="selector">#DEDFE0</color>
+</resources>
