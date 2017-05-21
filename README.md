@@ -1,5 +1,12 @@
 RecyclerAdapter
-The App could show you how to use the RecyclerView and Adapter. And you can learn from it.
+==============================
+The App could show you how to use the Adapter of RecyclerView. And you can learn from it.
 
-MCRuiFeng
-dev.mcrf@qq.com
+
+<br/>
+
+Author:MCRuiFeng
+Email:dev.mcrf@qq.com
+
+<br/>
+
