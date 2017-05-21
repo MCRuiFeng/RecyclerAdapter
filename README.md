@@ -4,9 +4,7 @@ The App could show you how to use the Adapter of RecyclerView. And you can learn
 
 
 <br/>
-
 Author:MCRuiFeng
-Email:dev.mcrf@qq.com
-
 <br/>
-
+Email:dev.mcrf@qq.com
+<br/>
