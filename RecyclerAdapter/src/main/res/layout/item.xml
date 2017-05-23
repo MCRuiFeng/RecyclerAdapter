@@ -18,7 +18,8 @@
 			android:layout_width="30dp"
 			android:id="@+id/item_iv"
 			android:layout_marginRight="10dp"
-			android:background="@drawable/ic_main"/>
+			android:background="@drawable/ic_main"
+			android:visibility="visible"/>
 
 		<TextView
 			android:layout_height="wrap_content"
@@ -36,7 +37,8 @@
 		android:layout_width="24dp"
 		android:layout_alignParentEnd="true"
 		android:layout_centerVertical="true"
-		android:background="@drawable/ic_enter"/>
+		android:background="@drawable/ic_enter"
+		android:visibility="gone"/>
 
 </RelativeLayout>
 
