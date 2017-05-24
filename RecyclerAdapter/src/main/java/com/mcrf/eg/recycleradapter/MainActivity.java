@@ -6,114 +6,67 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
 import android.view.View;
-import android.widget.ListAdapter;
 import android.widget.Toast;
 import com.mcrf.eg.recycleradapter.R;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /*
  * By Github MCRuiFeng
  * Email:dev.mcrf@qq.com
- * 2017.05.21
+ * 2017.05.25
  */
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
-    private RecyclerAdapter mListAdapter;
-    private List<String> mDatas;
-	
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
+
+		//RecyclerView
+        initListData();
+    }
+
+
+
+	private void initListData() {
+		//在代码中添加Data  listAdapter.add(position, "");
 		
-        initData();
-        mRecyclerView = (RecyclerView) findViewById(R.id.main_rv);
-        mListAdapter = new RecyclerAdapter(this, mDatas);
-        mListAdapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener()
+		final List<String> listDatas = new ArrayList<String>();
+		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.main_rv);
+        RecyclerAdapter listAdapter = new RecyclerAdapter(this, listDatas);
+		
+		//Datas
+        listDatas.add("检查更新");
+		listDatas.add("更新日志");
+		listDatas.add("功能介绍");
+
+		//点击事件
+        listAdapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener()
 			{
 				@Override
-				public void onItemClick(View view, int position)
-				{
-					Toast.makeText(MainActivity.this, "Click" + mDatas.get(position), Toast.LENGTH_SHORT).show();
-				}
-
-				@Override
-				public void onItemLongClick(View view, int position)
-				{
-					mListAdapter.remove(position); //remove the item
-					Toast.makeText(MainActivity.this, "LongClick" + mDatas.get(position), Toast.LENGTH_SHORT).show();
+				public void onItemClick(View view, int position) {
+					Toast.makeText(MainActivity.this, "点击：" + listDatas.get(position), 1000).show();
 				}
 			});
-        mRecyclerView.setAdapter(mListAdapter);
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-		mRecyclerView.setLayoutManager(new LinearLayoutManager(this)
+        recyclerView.setAdapter(listAdapter);
+		//分割线
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+		//动画
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+		//布局方向
+		recyclerView.setLayoutManager(new LinearLayoutManager(this)
 			{
-				//设置不可滑动
+				//不可滑动
 				@Override
-				public boolean canScrollVertically()
-				{
+				public boolean canScrollVertically() {
 					return false;
 				}
 			});
-
-    }
-	
-	
-
-	protected void initData()
-	{
-        mDatas = new ArrayList<String>();
-        mDatas.add("检查更新");
-		mDatas.add("更新日志");
-
     }
 
 	
-	
-	/**
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-	{
-        getMenuInflater().inflate(R.menu.menu_list_layout, menu);
-        return true;
-    }
-
-	
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-	{
-        switch (item.getItemId())
-		{
-            case R.id.add_first:
-                mListAdapter.add(0, "add first");
-                break;
-            case R.id.add_last:
-                mListAdapter.add(mListAdapter.getItemCount(), "add last");
-                break;
-            case R.id.remove_first:
-                String value = mListAdapter.remove(0);
-                Toast.makeText(MainActivity.this, "remove:" + value, Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.remove_last:
-                String value1 =  mListAdapter.remove(mListAdapter.getItemCount() - 1);
-                Toast.makeText(MainActivity.this, "remove:" + value1, Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.horizontal:
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-                mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
-                break;
-            case R.id.vertical:
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-                mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-	*/
-
 }

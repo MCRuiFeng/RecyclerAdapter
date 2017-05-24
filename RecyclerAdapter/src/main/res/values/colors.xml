@@ -5,4 +5,5 @@
 	<color name="window">#F9F9FB</color>
 	<color name="divider">#DEDFE0</color>
 	<color name="selector">#DEDFE0</color>
+	<color name="text">#000000</color>
 </resources>
