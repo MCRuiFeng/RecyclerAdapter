@@ -4,7 +4,8 @@
 	android:layout_height="50dp"
 	android:layout_width="match_parent"
 	android:paddingStart="15dp"
-	android:paddingEnd="15dp">
+	android:paddingEnd="15dp"
+	android:background="@drawable/selector_ripple">
 
 	<LinearLayout
 		android:layout_height="wrap_content"
@@ -38,7 +39,7 @@
 		android:layout_alignParentEnd="true"
 		android:layout_centerVertical="true"
 		android:background="@drawable/ic_enter"
-		android:visibility="gone"/>
+		android:visibility="visible"/>
 
 </RelativeLayout>
 
