@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 	private void initListData() {
-		//在代码中添加Data  listAdapter.add(position, "");
-		
 		final List<String> listDatas = new ArrayList<String>();
 		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.main_rv);
         RecyclerAdapter listAdapter = new RecyclerAdapter(this, listDatas);

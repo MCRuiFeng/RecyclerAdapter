@@ -73,7 +73,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     }
 
 
-	interface OnItemClickListener
+	public interface OnItemClickListener
 	{
         public void onItemClick(View view, int position);
     }
